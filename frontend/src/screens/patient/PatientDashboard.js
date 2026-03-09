@@ -58,7 +58,7 @@ const statusTheme = {
   PENDING: { text: 'Pending', color: '#334155', bg: '#e2e8f0', icon: 'time' },
 };
 
-const PatientDashboard = ({ navigation }) => {
+const PatientDashboard = ({ navigation, route }) => {
   const { user, logout } = useAuth();
   const { width } = useWindowDimensions();
 
@@ -138,6 +138,13 @@ const PatientDashboard = ({ navigation }) => {
       return () => clearInterval(intervalId);
     }, [loadData])
   );
+
+  useEffect(() => {
+    const refreshAt = route?.params?.refreshAt;
+    if (refreshAt) {
+      loadData();
+    }
+  }, [route?.params?.refreshAt, loadData]);
 
   useEffect(() => {
     if (!loading) {

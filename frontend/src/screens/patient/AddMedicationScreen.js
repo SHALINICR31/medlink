@@ -53,6 +53,13 @@ const formatDateDisplay = (date) => {
   });
 };
 
+const toLocalDateString = (date) => {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, '0');
+  const day = `${date.getDate()}`.padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 const AddMedicationScreen = ({ navigation }) => {
   const { user } = useAuth();
 
@@ -185,8 +192,8 @@ const AddMedicationScreen = ({ navigation }) => {
         frequency,
         instructions: instructions.trim(),
         scheduledTimes: normalizedTimes,
-        startDate: startDate.toISOString().split('T')[0],
-        endDate: endDate ? endDate.toISOString().split('T')[0] : null,
+        startDate: toLocalDateString(startDate),
+        endDate: endDate ? toLocalDateString(endDate) : null,
         patientId,
         patientName: user?.name || 'Patient',
         active: true,
@@ -201,7 +208,7 @@ const AddMedicationScreen = ({ navigation }) => {
           onPress: () => {
             navigation.navigate('Dashboard', {
               screen: 'PatientDashboard',
-              params: { refreshAt: Date.now() },
+              params: { refreshAt: Date.now(), justAddedMedication: true },
             });
           },
         },

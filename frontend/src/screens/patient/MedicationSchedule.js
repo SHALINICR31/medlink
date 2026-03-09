@@ -17,6 +17,13 @@ const statusTheme = {
   PENDING: { color: '#334155', bg: '#e2e8f0', icon: 'time' },
 };
 
+const toLocalDateString = (date) => {
+  const year = date.getFullYear();
+  const month = `${date.getMonth() + 1}`.padStart(2, '0');
+  const day = `${date.getDate()}`.padStart(2, '0');
+  return `${year}-${month}-${day}`;
+};
+
 const MedicationSchedule = ({ navigation }) => {
   const { user, logout } = useAuth();
   const { width } = useWindowDimensions();
@@ -34,7 +41,7 @@ const MedicationSchedule = ({ navigation }) => {
     if (!patientId) return;
     setLoading(true);
     try {
-      const dateStr = date.toISOString().split('T')[0];
+      const dateStr = toLocalDateString(date);
       const data = await medicationService.getIntakesByDate(patientId, dateStr);
       setIntakes(data || []);
     } catch (err) {
