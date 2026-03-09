@@ -35,6 +35,7 @@ const Header = ({
   const patientTabs = [
     { key: 'Dashboard', label: 'Dashboard' },
     { key: 'Schedule', label: 'Schedule' },
+    
     { key: 'Vitals', label: 'My Vitals' },
   ];
   const doctorTabs = [
