@@ -8,33 +8,33 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
 **MedLink** helps patients manage medications effectively while enabling doctors to monitor adherence and health outcomes through real-time tracking and smart insights.
 
-## ✨ Key Features
+##  Key Features
 
 ### For Patients
-- 📱 Track daily medication intake
-- ⏰ Smart push notification reminders
-- 💊 Manage prescriptions and dosages
-- 📊 View adherence statistics and health insights
-- 🏥 Monitor vital signs (BP, heart rate, glucose)
+-  Track daily medication intake
+-  Smart push notification reminders
+-  Manage prescriptions and dosages
+-  View adherence statistics and health insights
+-  Monitor vital signs (BP, heart rate, glucose)
 
 ### For Doctors
-- 👥 Monitor all patient profiles
-- 📈 Real-time adherence dashboards
-- 💉 Create and manage prescriptions
-- 🔔 Alerts for non-adherent patients
-- 📊 Patient health metrics tracking
+-  Monitor all patient profiles
+-  Real-time adherence dashboards
+-  Create and manage prescriptions
+-  Alerts for non-adherent patients
+-  Patient health metrics tracking
 
-## 🚀 Tech Stack
+## Tech Stack
 
 **Frontend:** React Native 0.73.2, Expo 54, React Navigation  
 **Backend:** Spring Boot 3.2.0, Java 17, Spring Security, JWT  
 **Database:** MongoDB Atlas / Local MongoDB
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 medlink/
@@ -86,7 +86,7 @@ medlink/
 
 ---
 
-## 📦 Prerequisites
+## Prerequisites
 
 - Node.js v18+
 - Java JDK 17
@@ -115,13 +115,13 @@ npm start
 spring.data.mongodb.uri=mongodb://localhost:27017/medlink
 ```
 
-## ▶️ Running the App
+## Running the App
 
 1. **Start Backend:** `cd backend && mvn spring-boot:run`
 2. **Start Frontend:** `cd frontend && npm start`
 3. **Run on device:** Press `a` for Android or `i` for iOS in Expo CLI
 
-## 🌐 API Endpoints
+## API Endpoints
 ### Authentication Endpoints
 
 | Method | Endpoint | Description | Body |
@@ -182,7 +182,7 @@ spring.data.mongodb.uri=mongodb://localhost:27017/medlink
 
 ---
 
-## 🔒 Security
+## Security
 
 ### Authentication Flow
 1. User registers/logs in with email and password
@@ -217,7 +217,7 @@ spring.data.mongodb.uri=mongodb://localhost:27017/medlink
 - **Alerts Section**: Notifications for patients needing attention
 
 ---
-## 🛠️ Development
+## Development
 
 **Build Backend JAR:**
 ```bash
@@ -232,12 +232,12 @@ cd frontend
 expo build:android  # or expo build:ios
 ```
 
-## 📄 License
+## License
 
 MIT License - see LICENSE file
 
 ---
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - Built with ❤️ using Spring Boot and React Native
 - Special thanks to the open-source community
