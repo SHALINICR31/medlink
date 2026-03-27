@@ -203,16 +203,6 @@ temperature
 status (NORMAL / ELEVATED / HIGH)  
 ```
 
----
-
-### 📊 DashboardSummary  
-
-```
-totalMedications  
-taken  
-missed  
-pending  
-```
 
 ---
 
