@@ -1,4 +1,4 @@
-# 🖥️ MedLink Backend  
+# 🖥️ Presciptions  
 ### 🚀 Online Prescription & Medication Tracker with AI Chatbot  
 
 The MedLink backend is a **Spring Boot-based REST API system** that powers a role-based healthcare platform for patients and doctors. It manages medications, prescriptions, vitals, and integrates an **AI-powered chatbot (MedBot)** for intelligent medical assistance.
