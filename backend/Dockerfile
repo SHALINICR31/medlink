@@ -4,11 +4,9 @@ WORKDIR /app
 
 COPY . .
 
-RUN javac -version
-
-# If mvnw exists use it, else use mvn
-RUN if [ -f mvnw ]; then chmod +x mvnw && ./mvnw clean package -DskipTests; else apt-get update && apt-get install -y maven && mvn clean package -DskipTests; fi
+RUN apt-get update && apt-get install -y maven
+RUN mvn clean package -DskipTests
 
 EXPOSE 8080
 
-CMD ["sh", "-c", "java -jar target/*.jar"]
+CMD ["sh", "-c", "java -jar target/*.jar --server.port=$PORT"]
