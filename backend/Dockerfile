@@ -2,19 +2,13 @@ FROM eclipse-temurin:17-jdk
 
 WORKDIR /app
 
-# copy only needed files first (better build)
-COPY pom.xml .
-COPY mvnw .
-COPY .mvn .mvn
+COPY . .
 
-RUN chmod +x mvnw
-RUN ./mvnw dependency:go-offline
+RUN javac -version
 
-# now copy source
-COPY src src
-
-RUN ./mvnw clean package -DskipTests
+# If mvnw exists use it, else use mvn
+RUN if [ -f mvnw ]; then chmod +x mvnw && ./mvnw clean package -DskipTests; else apt-get update && apt-get install -y maven && mvn clean package -DskipTests; fi
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/*.jar"]
+CMD ["sh", "-c", "java -jar target/*.jar"]
