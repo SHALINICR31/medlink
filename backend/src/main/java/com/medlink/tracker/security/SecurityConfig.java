@@ -39,7 +39,7 @@ public class SecurityConfig {
                 session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             )
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/auth/**").permitAll()
+                .requestMatchers("/auth/**").permitAll()
                 .requestMatchers("/api/doctor/**").hasRole("DOCTOR")
                 .requestMatchers(HttpMethod.POST, "/api/patient").hasAnyRole("DOCTOR", "PATIENT")
                 .requestMatchers(HttpMethod.GET, "/api/patient/doctor/**").hasRole("DOCTOR")
@@ -61,6 +61,7 @@ public class SecurityConfig {
 
         // ✅ Explicitly allow your frontend ports
         config.setAllowedOrigins(List.of(
+                "https://medlink-pro.onrender.com",
                 "http://localhost:8081",   // Expo Web
                 "http://localhost:19006",  // Expo default web
                 "http://localhost:3000"    // React web (if used)
