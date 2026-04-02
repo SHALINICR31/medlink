@@ -1,6 +1,6 @@
 // App Constants
 //export const API_BASE_URL = 'http://10.0.2.2:8080/api'; // Android Emulator
- export const API_BASE_URL = 'https://medlink-pro.onrender.com'; // iOS Simulator
+ export const API_BASE_URL = 'https://medlink-pro.onrender.com/api'; // iOS Simulator
 // export const API_BASE_URL = 'https://your-api.com/api'; // Production
 
 export const ROLES = {
