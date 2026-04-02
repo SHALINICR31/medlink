@@ -4,7 +4,7 @@ const AsyncStorage = {
   removeItem: (key) => Promise.resolve(localStorage.removeItem(key)),
 };
 
-const API_BASE_URL = 'https://medlink-n6ra.onrender.com';
+const API_BASE_URL = 'https://medlink-n6ra.onrender.com/api';
 
 export const authService = {
   register: async (userData) => {
