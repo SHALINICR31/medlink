@@ -15,7 +15,7 @@ public class AuthController {
     @Autowired
     private AuthService authService;
 
-    @PostMapping("/api/register")
+    @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody Map<String, String> request) {
         try {
             return ResponseEntity.ok(authService.register(request));
@@ -24,7 +24,7 @@ public class AuthController {
         }
     }
 
-    @PostMapping("/api/login")
+    @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody Map<String, String> request) {
         try {
             return ResponseEntity.ok(authService.login(request));
