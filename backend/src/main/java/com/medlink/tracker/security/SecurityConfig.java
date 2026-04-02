@@ -54,37 +54,15 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
+   @Bean
     public CorsConfigurationSource corsConfigurationSource() {
-
         CorsConfiguration config = new CorsConfiguration();
-
-        // ✅ Explicitly allow your frontend ports
-        config.setAllowedOrigins(List.of(
-                "https://medlink-pro.onrender.com",
-                "http://localhost:8081",   // Expo Web
-                "http://localhost:19006",  // Expo default web
-                "http://localhost:3000"    // React web (if used)
-        ));
-
-        config.setAllowedMethods(List.of(
-                "GET",
-                "POST",
-                "PUT",
-                "DELETE",
-                "PATCH",
-                "OPTIONS"
-        ));
-
+        config.setAllowedOriginPatterns(List.of("*")); // ✅ fixed
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
-
         config.setAllowCredentials(true);
-
-        UrlBasedCorsConfigurationSource source =
-                new UrlBasedCorsConfigurationSource();
-
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
-
         return source;
     }
 }
